@@ -1,0 +1,24 @@
+class TiendaOnline:                                           #"class" la hemos utilizado para definir una nueva clase. Una clase es como una plantilla que luego nos servirá para crear objetos. 
+    def __init__(self):                                       # Hemos iniciado la clase TiendaOnline: el golem ha cobrado vida. 
+        self.inventorio = []                                  #el primer atributo de la clase será una lista vacia de diccionarios. Cada diccionario va a representar un producto. Claves: nombre, precio y cantidad de productos.  
+        self.clientes = {}                                    #el segundo atributo de nuestra clase será un diccionario vacio. Cada clave de este diccionario será el nombre del cliente, su email e historial de las compras. 
+        self.ventas_totales = 0.0                             #el tercer atributo será un número de tipo float para llevar un registro de las ventas totales de la tienda. Lo he inicializado con valor 0. 
+    def add_product(self, nombre, precio, cantidad):     #con este método vamos a a) agregar un producto al inventario, o b) si el producto ya está, pues actualizar la cantidad. 
+        nuevo_producto = {"nombre": nombre, "precio": precio, "cantidad": cantidad} # Creamos un diccionario y recibe el nombre, precio y cantidad del producto como parámetros
+        for producto in self.inventario:                      #Itera a través del inventario y compara los nombres de los productos con el nombre proporcionado
+          if producto["nombre"] == nombre:
+            producto["cantidad"] += cantidad                  #Si el producto ya existe, actualiza la cantidad y nos la devuelve para guardarla con "return."
+            return
+        else: self.inventario.append(nuevo_producto)         #Si no existe, agrega un nuevo producto al inventario - se utiliza el operador .append 
+    def ver_inventario(self):                                #Muestra el inventario de productos con sus detalles.
+        for producto in self.inventario:                     #Itera a través del inventario utilizando el bucle for 
+            print(f"Nombre: {producto['nombre']}, Precio: ${producto['precio']}, Cantidad: {producto['cantidad']}") #Utilizamos print porque solamente queremos ver esta información en la pantalla. 
+    def buscar_producto(self, nombre):                       #Busca un producto en el inventario por nombre y muestra sus detalles.
+        for producto in self.inventario:                     #Itera a traves del inventario utilizando el bucle for
+          if producto["nombre"] == nombre:
+            print(f"Nombre: {producto['nombre']}, Precio: ${producto['precio']}, Cantidad: {producto['cantidad']}")
+            return                                           #Salimos del bucle si encontramos el producto
+        else:
+          print(f"El producto {nombre} no se encontró en el inventario.") #Si no encontramos el producto, imprimimos el mensaje que no se encontró en el inventario. 
+    
+    
