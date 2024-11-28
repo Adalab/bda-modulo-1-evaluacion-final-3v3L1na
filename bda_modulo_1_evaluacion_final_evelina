@@ -20,5 +20,5 @@ class TiendaOnline:                                           #"class" la hemos 
             return                                           #Salimos del bucle si encontramos el producto
         else:
           print(f"El producto {nombre} no se encontró en el inventario.") #Si no encontramos el producto, imprimimos el mensaje que no se encontró en el inventario. 
-    
-    
+    def probar (self): 
+     
