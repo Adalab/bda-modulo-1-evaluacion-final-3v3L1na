@@ -1,4 +1,5 @@
-This Python class simulates an online shop of nerdy socks. It includes methods for managing products, customers, and sales.
+This Python class simulates an online shop of nerdy socks: Hogwarts Houses Socks! 
+It includes methods for managing products, customers, and sales.
 
 KEY FEATURES:
 
